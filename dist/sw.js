@@ -1,4 +1,4 @@
-/*global UVServiceWorker,__uv$config*/
+/*global UV2ServiceWorker,__uv2$config*/
 /*
  * Stock service worker script.
  * Users can provide their own sw.js if they need to extend the functionality of the service worker.
@@ -9,6 +9,6 @@ importScripts('uv.bundle.js');
 importScripts('uv.config.js');
 importScripts(__uv2$config.sw || 'uv.sw.js');
 
-const sw = new UVServiceWorker();
+const sw = new UV2ServiceWorker();
 
 self.addEventListener('fetch', (event) => event.respondWith(sw.fetch(event)));
